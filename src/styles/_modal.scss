@@ -1,0 +1,58 @@
+.Modal {
+  background-color: var(--pokedexBg);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 100%;
+  border-radius: 8px;
+  cursor: auto;
+  padding: 1.5rem;
+}
+
+.Modal:focus {
+  outline: 0;
+}
+
+.Overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  opacity: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.Overlay--after-open {
+  opacity: 1;
+}
+
+.Overlay--before-close {
+  opacity: 0;
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+button.close {
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
