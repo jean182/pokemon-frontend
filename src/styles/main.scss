@@ -1,0 +1,10 @@
+@import "modal";
+@import "pokedex";
+@import "switch";
+@import "variables";
+
+body {
+  background: var(--backgroundColor);
+  color: var(--primaryText);
+  font-weight: 400;
+}
