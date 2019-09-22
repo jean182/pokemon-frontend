@@ -5,13 +5,15 @@ html {
   --primaryText: #212121;
   --secondaryText: #7b7b7b;
   --pokedexBg: #dd0a2d;
+  --toggleBackground: #2a80c3;
 }
 
 html[data-theme="dark"] {
   --primary: #ff7597;
   --primaryTheme: #ff0266;
-  --backgroundColor: #1a1a1d;
+  --backgroundColor: #3c4853;
   --primaryLink: #8bb9dd;
   --primaryText: rgba(255, 255, 255, 0.8);
   --secondaryText: rgba(255, 255, 255, 0.6);
+  --toggleBackground: #dd0a2d;
 }

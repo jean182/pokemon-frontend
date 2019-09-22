@@ -1,7 +1,8 @@
+@import "variables";
 @import "modal";
 @import "pokedex";
 @import "switch";
-@import "variables";
+@import "toggle";
 
 body {
   background: var(--backgroundColor);

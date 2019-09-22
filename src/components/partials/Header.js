@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Switch from "./Switch"
+import Toggle from "react-toggle"
+import "react-toggle/style.css"
 
 const Header = props => {
   const { isOn, toggleTheme } = props
@@ -11,7 +12,7 @@ const Header = props => {
       </nav>
       <nav style={{ display: "flex", justifyContent: "spaceBetween" }}>
         <div>
-          <Switch isOn={isOn} handleToggle={toggleTheme} />
+          <Toggle defaultChecked={isOn} icons={false} onChange={toggleTheme} />
         </div>
       </nav>
     </header>
