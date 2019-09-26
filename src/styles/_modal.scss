@@ -1,41 +1,46 @@
-.Modal {
-  background-color: var(--pokedexBg);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  width: 100%;
-  border-radius: 8px;
-  cursor: auto;
-  padding: 1.5rem;
-}
-
-.Modal:focus {
-  outline: 0;
-}
-
-.Overlay {
+.pokedex-modal-cover {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.7);
-  z-index: 9999;
-  opacity: 1;
-  overflow-x: hidden;
-  overflow-y: auto;
+  position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 10; // This must be at a higher index to the rest of your page content
+  transform: translateZ(0);
+  background-color: rgba(#000, 0.15);
+  transition: 0.3s;
 }
 
-.Overlay--after-open {
-  opacity: 1;
+.pokedex-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2.5em 1.5em 1.5em 1.5em;
+  background-color: var(--pokedexBg);
+  border-radius: 8px;
+  cursor: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @media screen and (min-width: 500px) {
+    left: 50%;
+    top: 50%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    max-width: 30em;
+    max-height: calc(100% - 1em);
+  }
 }
 
-.Overlay--before-close {
-  opacity: 0;
+.lock-scroll {
+  overflow: hidden !important;
 }
 
 .close {

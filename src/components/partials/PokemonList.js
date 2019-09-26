@@ -1,9 +1,18 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
 import _ from "lodash"
-import { loadPokemon, sortedPokemon } from "../../redux/modules/pokemon"
+import {
+  loadPokemon,
+  sortedPokemon,
+} from "../../redux/modules/pokemon/pokemonList"
 import TableLoader from "./wrappers/TableLoader/TableLoader"
 import Pokedex from "./Pokedex/Pokedex"
+import PokedexMain from "./Pokedex/PokedexMain"
+
+const modalProps = {
+  ariaLabel: 'Pokedex Modal',
+  triggerText: 'This is a button to trigger the Pokedex'
+};
 
 class PokemonList extends Component {
   componentDidMount() {
@@ -17,6 +26,9 @@ class PokemonList extends Component {
     if (!_.isEmpty(error)) return <div>{error}</div>
     return (
       <React.Fragment>
+        <Pokedex {...modalProps}>
+          <PokedexMain />
+        </Pokedex>
         <div className="row mb-2 p-2">
           <div className="col-3">Pokedex Number</div>
           <div className="col-3">Name</div>
@@ -40,12 +52,7 @@ class PokemonList extends Component {
   }
 
   render() {
-    return (
-      <div className="container">
-        <Pokedex />
-        {this.renderPokemonList()}
-      </div>
-    )
+    return <div className="container">{this.renderPokemonList()}</div>
   }
 }
 

@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-const PokedexHeader = ({ close }) => {
+const PokedexHeader = ({ children }) => {
   return (
     <div className="d-flex justify-content-between">
       <div className="d-flex justify-content-between">
@@ -25,15 +25,13 @@ const PokedexHeader = ({ close }) => {
           ></span>
         </div>
       </div>
-      <button className="close" onClick={close}>
-        <span aria-hidden="true">&times;</span>
-      </button>
+      {children}
     </div>
   )
 }
 
 PokedexHeader.propTypes = {
-  close: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 }
 
 export default PokedexHeader

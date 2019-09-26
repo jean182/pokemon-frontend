@@ -3,8 +3,8 @@ import pokemonReducer, {
   loadPokemon,
   fetchPokemonSaga,
   loadPokemonFailed,
-} from "../pokemon"
-import { requestPokemon } from "../../../api/pokemonRequests"
+} from "../pokemonList"
+import { requestPokemonList } from "../../../../api/pokemonRequests"
 
 const pokemon = [
   {
@@ -86,13 +86,13 @@ describe("sagas", () => {
     describe("when saga is triggered", () => {
       const generator = fetchPokemonSaga()
       const next = generator.next(loadPokemon())
-      expect(next.value).toEqual(call(requestPokemon))
+      expect(next.value).toEqual(call(requestPokemonList))
     })
 
     it("Fetches the pokemon list successfully", () => {
       const data = pokemon
       const generator = fetchPokemonSaga()
-      expect(generator.next().value).toEqual(call(requestPokemon))
+      expect(generator.next().value).toEqual(call(requestPokemonList))
       const success = generator.next({ data })
 
       expect(success.value).toEqual(
